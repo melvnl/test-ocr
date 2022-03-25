@@ -6,7 +6,7 @@ function App() {
   const [imageData, setImageData] = useState(null);
   const worker = createWorker({
     logger: (m) => {
-      console.log(m);
+      console.log(m.status);
     },
   });
   const convertImageToText = async () => {
@@ -48,8 +48,8 @@ function App() {
         />
       </div>
       <div className="display-flex">
-        <img src={imageData} alt="" srcset="" />
-        <p>{ocr}</p>
+        <img src={imageData} alt="" srcset="" style={{maxWidth: 300, maxHeight: 300}} />
+        <p style={{color: '#000'}}>{ocr}</p>
       </div>
     </div>
   );
